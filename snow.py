@@ -79,7 +79,11 @@ def testbench():
   return _bench
 
 def sim(visu = False):
-  os.remove('_bench.vcd')
+  try:
+    os.remove('_bench.vcd')
+  except Exception as e:
+    pass # just ignore, the file is probably not here.
+
   fsm = traceSignals(testbench())
   sim = Simulation(fsm)
   sim.run()
