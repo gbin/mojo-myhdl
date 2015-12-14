@@ -36,7 +36,7 @@ def snow(led, clock, reset, button):
     led.next = state
   return rtl, display
 
-def run_mojo():
+def compile_mojo():
   brd = get_board('mojo')
   brd.add_port('button', pins=51, pullup=True)  # you can plug directly a button there between pin51 and gnd.
   flow = brd.get_flow(top=snow)
@@ -92,14 +92,14 @@ def sim(visu = False):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Snowflake demo for mojo v3.')
-  parser.add_argument('--run', dest='run', action='store_const',
+  parser.add_argument('--compile', dest='compile', action='store_const',
                       const=True, default=False,
-                      help='Run on the real hardware instead of simulate.')
+                      help='Compile for the real hardware instead of a simulation, settings64.sh from ISE needs to be used to setup the environment first.')
   parser.add_argument('--visu', dest='visu', action='store_const',
                       const=True, default=False,
                       help='Start gtkwave to visualize the simulation.')
   args = parser.parse_args()
-  if args.run:
-    mojo_run()
+  if args.compile:
+    compile_mojo()
   else:
     sim(args.visu)
