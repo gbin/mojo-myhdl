@@ -1,4 +1,4 @@
-# MyHDL for Mojo v3
+# MyHDL for the FPGA board Mojo v3
 
 This is a project to get you started on the [Mojo v3 board](https://embeddedmicro.com/mojo-v3.html) using MyHDL & RHEA.
 
