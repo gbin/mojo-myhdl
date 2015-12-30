@@ -2,7 +2,7 @@
 
 This is a project to get you started on the [Mojo v3 board](https://embeddedmicro.com/mojo-v3.html) using MyHDL & RHEA.
 
-The snow example adds a led at the top of the 8 leds when you press a button and let the "snowflakes" fall.
+The snow example lights up a led at the top of the 8 leds when you press a button and let the "snowflakes" fall.
 
 It needs the requirements from requirements.txt + [this fix on rhea](https://github.com/cfelton/rhea/issues/5). You need Xilinx ISE Design Suite to be able to compile the example.
 
